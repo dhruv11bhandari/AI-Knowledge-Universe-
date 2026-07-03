@@ -131,9 +131,10 @@ project/
 > that.
 
 ## Screenshots
+<img width="2108" height="1750" alt="image" src="https://github.com/user-attachments/assets/aaca6534-a2f2-4f8b-8142-55514519e4ff" />
 
-*(Add screenshots of the dashboard, search results, company page, and graph
-view here once you've run the app locally.)*
+<img width="2338" height="1738" alt="image" src="https://github.com/user-attachments/assets/5462768f-d958-4877-848e-b6525b821cd6" />
+
 
 ## Future Improvements
 
