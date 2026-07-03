@@ -1,162 +1,327 @@
+<div align="center">
+
 # AI Knowledge Universe
 
-An interactive web app for exploring the AI company ecosystem using semantic
-search, sentence embeddings, and knowledge graphs. Built as a learning
-project to practice combining a Flask backend with modern NLP tooling
-(Sentence Transformers + FAISS) and graph visualization (NetworkX + PyVis).
+### *Explore the AI Ecosystem through Semantic Search, Knowledge Graphs & Modern NLP*
 
-## Project Overview
+<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=28&pause=1200&color=00C2FF&center=true&vCenter=true&width=900&lines=Semantic+Search+Powered+by+Sentence+Transformers;Knowledge+Graphs+with+NetworkX+%26+PyVis;Natural+Language+Company+Discovery;Built+with+Flask+%7C+FAISS+%7C+Python" />
 
-AI Knowledge Universe lets you:
+<br>
 
-- Search for AI companies using natural language (e.g. *"companies building
-  robotics models"*) instead of exact keyword matches
-- Browse a dashboard with stats and category breakdowns
-- View a company's profile, including related and semantically similar
-  companies
-- Explore an interactive knowledge graph showing how companies connect
-  through shared categories, founders, technologies, and description
-  similarity
+![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)
+![Flask](https://img.shields.io/badge/Flask-Web_App-black?style=for-the-badge&logo=flask)
+![FAISS](https://img.shields.io/badge/FAISS-Vector_Search-red?style=for-the-badge)
+![Sentence Transformers](https://img.shields.io/badge/Sentence_Transformers-NLP-success?style=for-the-badge)
+![NetworkX](https://img.shields.io/badge/Knowledge_Graph-NetworkX-green?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)
 
-The dataset ships with 20 curated AI companies (`sample_data/`) so the whole
-pipeline runs out of the box without needing to scrape the web.
+---
 
-## Features
+### Discover AI companies using **Natural Language Search** instead of traditional keyword matching.
 
-- **Data pipeline** — cleans and normalizes company data (dedupe, tag
-  generation, category normalization)
-- **Semantic search** — Sentence Transformer embeddings + a FAISS index for
-  fast nearest-neighbor search
-- **Knowledge graph** — a NetworkX graph connecting companies by shared
-  category, founder, technology, or embedding similarity, rendered as an
-  interactive PyVis graph
-- **Company pages** — overview, technologies, related companies (graph
-  neighbors), and similar companies (embedding neighbors)
-- **Dashboard** — total companies, category counts, recent additions, and a
-  search box
+</div>
 
-## Technologies Used
+---
 
-| Layer          | Tools                                             |
-|----------------|----------------------------------------------------|
-| Backend        | Python, Flask                                     |
-| NLP / Search   | Sentence Transformers, FAISS                      |
-| Data           | BeautifulSoup, requests, JSON/CSV                 |
-| Graph          | NetworkX, PyVis                                   |
-| Visualization  | Plotly, PyVis                                     |
-| Frontend       | HTML, CSS, JavaScript (no framework)              |
+# Overview
 
-## Project Structure
+AI Knowledge Universe is an interactive AI exploration platform that combines **semantic search**, **vector embeddings**, and **knowledge graphs** into one intuitive web application.
 
+Instead of searching for exact company names, users can ask questions naturally:
+
+> *"Companies building robotics foundation models"*
+
+The system understands the **meaning** of your query using Sentence Transformers, finds the most relevant companies with **FAISS**, and visualizes relationships through an interactive **knowledge graph**.
+
+This project was built to learn how modern AI applications combine NLP, graph analytics, and web development into a single intelligent system.
+
+---
+
+# Features
+
+## Semantic AI Search
+
+- Natural language company search
+- Sentence Transformer embeddings
+- Fast FAISS similarity search
+- Finds relevant companies even without keyword matches
+
+---
+
+## Interactive Knowledge Graph
+
+Visualize how AI companies connect through:
+
+- Shared technologies
+- Common founders
+- Similar industries
+- Semantic similarity
+- Categories
+
+Built using **NetworkX + PyVis**.
+
+---
+
+## Dashboard
+
+View:
+
+- Company statistics
+- Category distribution
+- Recent additions
+- Quick semantic search
+- Interactive company explorer
+
+---
+
+## Company Profiles
+
+Every company includes:
+
+- Description
+- Technologies
+- Categories
+- Related companies
+- Similar companies using embeddings
+
+---
+
+## Data Pipeline
+
+Automatic preprocessing includes:
+
+- Data cleaning
+- Deduplication
+- Category normalization
+- Tag generation
+- Embedding generation
+- FAISS index creation
+
+---
+
+# Architecture
+
+```text
+                 Raw Company Data
+                        │
+                        ▼
+               Data Cleaning Pipeline
+                        │
+                        ▼
+           Sentence Transformer Embeddings
+                        │
+                        ▼
+               FAISS Vector Index
+                        │
+                        ▼
+          Semantic Search Engine
+                        │
+        ┌───────────────┴───────────────┐
+        ▼                               ▼
+Knowledge Graph                  Flask Dashboard
+(NetworkX + PyVis)             Search + Company Pages
 ```
+
+---
+
+# Tech Stack
+
+| Layer | Technologies |
+|--------|--------------|
+| Backend | Flask, Python |
+| NLP | Sentence Transformers |
+| Vector Search | FAISS |
+| Graph Analytics | NetworkX |
+| Graph Visualization | PyVis |
+| Data Processing | BeautifulSoup, Requests |
+| Visualization | Plotly |
+| Frontend | HTML, CSS, JavaScript |
+
+---
+
+# Project Structure
+
+```text
 project/
-├── app.py                  # Flask app + routes
-├── config.py                # Shared paths and settings
+│
+├── app.py
+├── config.py
 ├── requirements.txt
 │
 ├── data/
-│   ├── raw/                 # Raw company data (generated)
-│   ├── cleaned/              # Cleaned company data (generated)
-│   └── embeddings/          # Saved vectors + FAISS index (generated)
+│   ├── raw/
+│   ├── cleaned/
+│   └── embeddings/
 │
 ├── scraper/
-│   ├── scraper.py           # Collects raw data (sample dataset by default)
-│   ├── cleaner.py           # Dedupe, clean text, normalize categories, tags
+│   ├── scraper.py
+│   ├── cleaner.py
 │   └── utils.py
 │
 ├── embedding/
-│   ├── embed.py             # Generates Sentence Transformer embeddings
-│   ├── faiss_index.py       # Builds/loads the FAISS index
-│   └── search.py            # Semantic search + "similar companies"
+│   ├── embed.py
+│   ├── faiss_index.py
+│   └── search.py
 │
 ├── graph/
-│   ├── graph_builder.py     # Builds the NetworkX knowledge graph
-│   └── visualize.py         # Renders the graph with PyVis
+│   ├── graph_builder.py
+│   └── visualize.py
 │
 ├── static/
-│   ├── css/style.css
-│   ├── js/main.js
-│   └── images/
-│
 ├── templates/
-│   ├── base.html
-│   ├── index.html           # Dashboard
-│   ├── search.html
-│   ├── company.html
-│   └── graph.html
-│
 └── sample_data/
-    └── companies_sample.json
 ```
 
-## Installation
+---
 
-1. **Clone the repo and create a virtual environment**
+# Installation
 
-   ```bash
-   git clone <your-repo-url>
-   cd project
-   python -m venv venv
-   source venv/bin/activate   # Windows: venv\Scripts\activate
-   ```
+Clone the repository
 
-2. **Install dependencies**
+```bash
+git clone https://github.com/yourusername/AI-Knowledge-Universe.git
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+cd AI-Knowledge-Universe
+```
 
-3. **Run the data pipeline** (only needs to be done once, or whenever the
-   sample dataset changes)
+Create a virtual environment
 
-   ```bash
-   python scraper/scraper.py      # copies sample data into data/raw/
-   python scraper/cleaner.py      # cleans it into data/cleaned/
-   python embedding/embed.py      # generates embeddings
-   python embedding/faiss_index.py  # builds the FAISS index
-   python graph/visualize.py      # pre-builds the graph HTML (optional, app can do this on demand)
-   ```
+```bash
+python -m venv venv
+```
 
-4. **Run the app**
+Activate it
 
-   ```bash
-   python app.py
-   ```
+Windows
 
-   Then open `http://localhost:5000` in your browser.
+```bash
+venv\Scripts\activate
+```
 
-> Note: the first time you run `embed.py`, Sentence Transformers will
-> download the `all-MiniLM-L6-v2` model (a few hundred MB). This requires
-> an internet connection but only happens once — it's cached locally after
-> that.
+Linux / macOS
 
-## Screenshots
-<img width="2108" height="1750" alt="image" src="https://github.com/user-attachments/assets/aaca6534-a2f2-4f8b-8142-55514519e4ff" />
-
-<img width="2338" height="1738" alt="image" src="https://github.com/user-attachments/assets/5462768f-d958-4877-848e-b6525b821cd6" />
-
-
-## Future Improvements
-
-- Replace the sample dataset with a real scraper for specific AI company
-  directories
-- Add a proper database (SQLite or Postgres) instead of JSON files
-- Add pagination and filters to the search results page
-- Cache the knowledge graph instead of rebuilding it on every request to
-  `/graph`
-- Add unit tests for the cleaning and graph-building logic
-- Deploy the app (e.g. Render, Railway, or Heroku) with a persistent
-  embeddings index
-
-## License
-
-This is a student portfolio project, free to use and adapt for learning
-purposes.
-
-
-python3 -m venv venv
+```bash
 source venv/bin/activate
+```
+
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# Run the Data Pipeline
+
+```bash
 python scraper/scraper.py
+
 python scraper/cleaner.py
+
 python embedding/embed.py
+
 python embedding/faiss_index.py
+
+python graph/visualize.py
+```
+
+---
+
+# Launch the Application
+
+```bash
+python app.py
+```
+
+Visit
+
+```
+http://localhost:5000
+```
+
+---
+
+#  Screenshots
+
+## Dashboard
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/aaca6534-a2f2-4f8b-8142-55514519e4ff" width="900">
+</p>
+
+---
+
+## Knowledge Graph
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/5462768f-d958-4877-848e-b6525b821cd6" width="900">
+</p>
+
+---
+
+#  Future Roadmap
+
+- Real AI company scraper
+- SQLite/PostgreSQL integration
+- Graph filtering
+- Advanced semantic filters
+- User authentication
+- Company comparison
+- AI-powered recommendations
+- Cached graph generation
+- Docker deployment
+- Cloud deployment
+
+---
+
+#  Learning Outcomes
+
+This project demonstrates practical experience with:
+
+Semantic Search
+
+Vector Databases
+
+Sentence Embeddings
+
+FAISS
+
+Knowledge Graphs
+
+Flask Development
+
+Data Engineering
+
+NLP Pipelines
+
+---
+
+# Contributing
+
+Contributions are always welcome.
+
+If you'd like to improve the project:
+
+- Fork the repository
+- Create a feature branch
+- Commit your changes
+- Submit a Pull Request
+
+---
+
+# License
+
+Released under the MIT License.
+
+Feel free to use this project for learning, experimentation, and educational purposes.
+
+---
+
+<div align="center">
+
+### ⭐ If you found this project interesting, consider giving it a star!
+
+Made with ❤️ by **Dhruv Bhandari**
+
+</div>
