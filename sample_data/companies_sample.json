@@ -1,0 +1,222 @@
+[
+  {
+    "name": "OpenAI",
+    "description": "OpenAI builds large language models and AI research tools, including the GPT family of models used for chat, coding, and reasoning tasks.",
+    "category": "Large Language Models",
+    "headquarters": "San Francisco, USA",
+    "founders": ["Sam Altman", "Elon Musk", "Ilya Sutskever"],
+    "website": "https://openai.com",
+    "funding_stage": "Private",
+    "technologies": ["Transformers", "Reinforcement Learning", "PyTorch"],
+    "tags": ["LLM", "chatbot", "research", "generative AI"]
+  },
+  {
+    "name": "Anthropic",
+    "description": "Anthropic is an AI safety company that builds the Claude family of large language models with a focus on helpful, honest, and harmless AI.",
+    "category": "Large Language Models",
+    "headquarters": "San Francisco, USA",
+    "founders": ["Dario Amodei", "Daniela Amodei"],
+    "website": "https://anthropic.com",
+    "funding_stage": "Private",
+    "technologies": ["Transformers", "Constitutional AI", "PyTorch"],
+    "tags": ["LLM", "AI safety", "chatbot", "research"]
+  },
+  {
+    "name": "Cohere",
+    "description": "Cohere provides enterprise-focused large language models and embedding APIs for search, retrieval, and text generation.",
+    "category": "Large Language Models",
+    "headquarters": "Toronto, Canada",
+    "founders": ["Aidan Gomez", "Ivan Zhang", "Nick Frosst"],
+    "website": "https://cohere.com",
+    "funding_stage": "Series D",
+    "technologies": ["Transformers", "Embeddings", "NLP"],
+    "tags": ["LLM", "embeddings", "enterprise", "search"]
+  },
+  {
+    "name": "GitHub Copilot (Microsoft/OpenAI)",
+    "description": "GitHub Copilot is an AI coding assistant that suggests code completions and entire functions directly inside code editors.",
+    "category": "AI Coding Assistants",
+    "headquarters": "San Francisco, USA",
+    "founders": ["Nat Friedman", "Microsoft", "OpenAI"],
+    "website": "https://github.com/features/copilot",
+    "funding_stage": "Public (Microsoft)",
+    "technologies": ["Transformers", "Codex", "VS Code Extensions"],
+    "tags": ["coding assistant", "developer tools", "LLM"]
+  },
+  {
+    "name": "Cursor",
+    "description": "Cursor is an AI-first code editor built to help developers write, refactor, and understand code faster using integrated language models.",
+    "category": "AI Coding Assistants",
+    "headquarters": "San Francisco, USA",
+    "founders": ["Michael Truell", "Sualeh Asif"],
+    "website": "https://cursor.sh",
+    "funding_stage": "Series A",
+    "technologies": ["LLM Integration", "Code Editor", "Transformers"],
+    "tags": ["coding assistant", "developer tools", "editor"]
+  },
+  {
+    "name": "Figure AI",
+    "description": "Figure AI develops general-purpose humanoid robots designed to perform physical labor tasks in warehouses and manufacturing.",
+    "category": "Robotics",
+    "headquarters": "Sunnyvale, USA",
+    "founders": ["Brett Adcock"],
+    "website": "https://figure.ai",
+    "funding_stage": "Series B",
+    "technologies": ["Robotics", "Computer Vision", "Reinforcement Learning"],
+    "tags": ["robotics", "humanoid", "hardware"]
+  },
+  {
+    "name": "Boston Dynamics",
+    "description": "Boston Dynamics designs advanced mobile robots capable of dynamic movement, balance, and manipulation for industrial and research use.",
+    "category": "Robotics",
+    "headquarters": "Waltham, USA",
+    "founders": ["Marc Raibert"],
+    "website": "https://bostondynamics.com",
+    "funding_stage": "Acquired (Hyundai)",
+    "technologies": ["Robotics", "Control Systems", "Computer Vision"],
+    "tags": ["robotics", "hardware", "industrial"]
+  },
+  {
+    "name": "Stability AI",
+    "description": "Stability AI develops open generative models for image, audio, and video generation, including the Stable Diffusion family of models.",
+    "category": "Generative Media",
+    "headquarters": "London, UK",
+    "founders": ["Emad Mostaque"],
+    "website": "https://stability.ai",
+    "funding_stage": "Series A",
+    "technologies": ["Diffusion Models", "Generative AI", "PyTorch"],
+    "tags": ["image generation", "open source", "generative AI"]
+  },
+  {
+    "name": "Runway",
+    "description": "Runway builds AI-powered video generation and editing tools used by filmmakers, artists, and content creators.",
+    "category": "Generative Media",
+    "headquarters": "New York, USA",
+    "founders": ["Cristobal Valenzuela", "Anastasis Germanidis", "Alejandro Matamala"],
+    "website": "https://runwayml.com",
+    "funding_stage": "Series D",
+    "technologies": ["Diffusion Models", "Video Generation", "Computer Vision"],
+    "tags": ["video generation", "creative tools", "generative AI"]
+  },
+  {
+    "name": "Hugging Face",
+    "description": "Hugging Face provides an open platform and libraries for sharing machine learning models, datasets, and NLP tools.",
+    "category": "ML Infrastructure",
+    "headquarters": "New York, USA",
+    "founders": ["Clement Delangue", "Julien Chaumond", "Thomas Wolf"],
+    "website": "https://huggingface.co",
+    "funding_stage": "Series D",
+    "technologies": ["Transformers", "Open Source Libraries", "Model Hub"],
+    "tags": ["open source", "NLP", "model hosting", "developer tools"]
+  },
+  {
+    "name": "Pinecone",
+    "description": "Pinecone offers a managed vector database used to power semantic search and retrieval-augmented generation applications.",
+    "category": "ML Infrastructure",
+    "headquarters": "New York, USA",
+    "founders": ["Edo Liberty"],
+    "website": "https://pinecone.io",
+    "funding_stage": "Series B",
+    "technologies": ["Vector Databases", "Embeddings", "Semantic Search"],
+    "tags": ["vector database", "embeddings", "infrastructure"]
+  },
+  {
+    "name": "Scale AI",
+    "description": "Scale AI provides data labeling and data infrastructure services used to train and evaluate machine learning models.",
+    "category": "ML Infrastructure",
+    "headquarters": "San Francisco, USA",
+    "founders": ["Alexandr Wang", "Lucy Guo"],
+    "website": "https://scale.com",
+    "funding_stage": "Series F",
+    "technologies": ["Data Labeling", "MLOps", "Computer Vision"],
+    "tags": ["data labeling", "infrastructure", "enterprise"]
+  },
+  {
+    "name": "Character.AI",
+    "description": "Character.AI lets users create and chat with customizable AI characters powered by large language models.",
+    "category": "Large Language Models",
+    "headquarters": "Menlo Park, USA",
+    "founders": ["Noam Shazeer", "Daniel De Freitas"],
+    "website": "https://character.ai",
+    "funding_stage": "Series A",
+    "technologies": ["Transformers", "Conversational AI", "PyTorch"],
+    "tags": ["chatbot", "LLM", "consumer app"]
+  },
+  {
+    "name": "Perplexity AI",
+    "description": "Perplexity AI is an AI-powered answer engine that combines search with large language models to provide cited, conversational answers.",
+    "category": "Search & Retrieval",
+    "headquarters": "San Francisco, USA",
+    "founders": ["Aravind Srinivas", "Denis Yarats", "Johnny Ho"],
+    "website": "https://perplexity.ai",
+    "funding_stage": "Series B",
+    "technologies": ["LLM", "Retrieval Augmented Generation", "Search"],
+    "tags": ["search", "LLM", "answer engine"]
+  },
+  {
+    "name": "Midjourney",
+    "description": "Midjourney is an independent research lab that produces an AI tool for generating images from natural language prompts.",
+    "category": "Generative Media",
+    "headquarters": "San Francisco, USA",
+    "founders": ["David Holz"],
+    "website": "https://midjourney.com",
+    "funding_stage": "Bootstrapped",
+    "technologies": ["Diffusion Models", "Generative AI"],
+    "tags": ["image generation", "creative tools", "generative AI"]
+  },
+  {
+    "name": "Weights & Biases",
+    "description": "Weights & Biases builds developer tools for tracking machine learning experiments, models, and datasets.",
+    "category": "ML Infrastructure",
+    "headquarters": "San Francisco, USA",
+    "founders": ["Lukas Biewald", "Chris Van Pelt", "Shawn Lewis"],
+    "website": "https://wandb.ai",
+    "funding_stage": "Series C",
+    "technologies": ["MLOps", "Experiment Tracking", "Developer Tools"],
+    "tags": ["MLOps", "developer tools", "infrastructure"]
+  },
+  {
+    "name": "Adept AI",
+    "description": "Adept AI builds AI agents that can take actions inside software applications on behalf of users, based on natural language instructions.",
+    "category": "AI Agents",
+    "headquarters": "San Francisco, USA",
+    "founders": ["David Luan", "Ashish Vaswani", "Niki Parmar"],
+    "website": "https://adept.ai",
+    "funding_stage": "Series B",
+    "technologies": ["Transformers", "Agents", "Reinforcement Learning"],
+    "tags": ["agents", "automation", "LLM"]
+  },
+  {
+    "name": "Replit",
+    "description": "Replit provides a browser-based coding environment with an integrated AI assistant that helps users write and deploy software.",
+    "category": "AI Coding Assistants",
+    "headquarters": "San Francisco, USA",
+    "founders": ["Amjad Masad", "Haya Odeh", "Faris Masad"],
+    "website": "https://replit.com",
+    "funding_stage": "Series B",
+    "technologies": ["LLM Integration", "Cloud IDE", "Developer Tools"],
+    "tags": ["coding assistant", "developer tools", "IDE"]
+  },
+  {
+    "name": "Waymo",
+    "description": "Waymo develops self-driving vehicle technology and operates autonomous ride-hailing services using AI-based perception and planning systems.",
+    "category": "Robotics",
+    "headquarters": "Mountain View, USA",
+    "founders": ["Google/Alphabet"],
+    "website": "https://waymo.com",
+    "funding_stage": "Subsidiary (Alphabet)",
+    "technologies": ["Computer Vision", "Autonomous Driving", "Sensor Fusion"],
+    "tags": ["robotics", "autonomous vehicles", "hardware"]
+  },
+  {
+    "name": "ElevenLabs",
+    "description": "ElevenLabs creates AI voice generation tools for realistic text-to-speech, voice cloning, and audio content creation.",
+    "category": "Generative Media",
+    "headquarters": "London, UK",
+    "founders": ["Piotr Dabkowski", "Mati Staniszewski"],
+    "website": "https://elevenlabs.io",
+    "funding_stage": "Series B",
+    "technologies": ["Text-to-Speech", "Generative Audio", "Voice Cloning"],
+    "tags": ["audio generation", "generative AI", "creative tools"]
+  }
+]

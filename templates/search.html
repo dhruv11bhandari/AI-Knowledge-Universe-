@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Search - AI Knowledge Universe{% endblock %}
+
+{% block content %}
+  <section class="hero hero-small">
+    <h1>Semantic Search</h1>
+    <form action="{{ url_for('search') }}" method="get" class="search-form">
+      <input
+        type="text"
+        name="q"
+        value="{{ query }}"
+        placeholder='Try "AI coding assistants"'
+        autocomplete="off"
+        required
+      >
+      <button type="submit">Search</button>
+    </form>
+  </section>
+
+  {% if query %}
+    <p class="results-summary">
+      Showing results for <strong>&ldquo;{{ query }}&rdquo;</strong>
+    </p>
+
+    {% if results %}
+      <div class="company-grid">
+        {% for company in results %}
+          <a href="{{ url_for('company_page', slug=company.slug) }}" class="company-card">
+            <div class="company-card-header">
+              <h3>{{ company.name }}</h3>
+              <span class="score-badge">{{ (company.similarity_score * 100) | round(0, 'floor') | int }}% match</span>
+            </div>
+            <span class="company-category">{{ company.category }}</span>
+            <p>{{ company.description }}</p>
+          </a>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="empty-state">
+        No results found. Make sure you've run the data pipeline
+        (see README.md) so the search index has data to search.
+      </p>
+    {% endif %}
+  {% else %}
+    <p class="empty-state">Type a query above to search companies by meaning.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {% if company %}{{ company.name }} - AI Knowledge Universe{% else %}Company Not Found{% endif %}
+{% endblock %}
+
+{% block content %}
+  {% if not company %}
+    <section class="hero hero-small">
+      <h1>Company Not Found</h1>
+      <p>We couldn't find a company with slug "{{ slug }}".</p>
+      <a href="{{ url_for('dashboard') }}">&larr; Back to dashboard</a>
+    </section>
+  {% else %}
+    <section class="company-header">
+      <span class="company-category">{{ company.category }}</span>
+      <h1>{{ company.name }}</h1>
+      <p class="company-description">{{ company.description }}</p>
+      <a href="{{ company.website }}" target="_blank" rel="noopener" class="website-link">
+        Visit website &rarr;
+      </a>
+    </section>
+
+    <section class="two-column">
+      <div class="column">
+        <h2>Overview</h2>
+        <table class="info-table">
+          <tr>
+            <th>Headquarters</th>
+            <td>{{ company.headquarters }}</td>
+          </tr>
+          <tr>
+            <th>Founders</th>
+            <td>{{ company.founders | join(", ") if company.founders else "Unknown" }}</td>
+          </tr>
+          <tr>
+            <th>Funding Stage</th>
+            <td>{{ company.funding_stage }}</td>
+          </tr>
+        </table>
+
+        <h2>Technologies</h2>
+        <div class="tag-list">
+          {% for tech in company.technologies %}
+            <span class="tag">{{ tech }}</span>
+          {% endfor %}
+        </div>
+
+        <h2>Tags</h2>
+        <div class="tag-list">
+          {% for tag in company.tags %}
+            <span class="tag tag-muted">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="column">
+        <h2>Related Companies</h2>
+        <p class="section-hint">Connected in the knowledge graph (shared category, founder, or technology).</p>
+        {% if related_companies %}
+          <ul class="company-list">
+            {% for item in related_companies %}
+              <li>
+                <a href="{{ url_for('company_page', slug=item.company.slug) }}">{{ item.company.name }}</a>
+                <span class="company-category">{{ item.reasons | join(", ") }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p class="empty-state">No related companies found yet.</p>
+        {% endif %}
+
+        <h2>Similar Companies</h2>
+        <p class="section-hint">Closest matches by embedding similarity.</p>
+        {% if similar_companies %}
+          <ul class="company-list">
+            {% for similar in similar_companies %}
+              <li>
+                <a href="{{ url_for('company_page', slug=similar.slug) }}">{{ similar.name }}</a>
+                <span class="company-category">{{ (similar.similarity_score * 100) | round(0, 'floor') | int }}% match</span>
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p class="empty-state">No similar companies found yet. Run the embedding pipeline first.</p>
+        {% endif %}
+      </div>
+    </section>
+
+    <section>
+      <h2>Graph Connections</h2>
+      <p class="section-hint">See how {{ company.name }} fits into the full knowledge graph.</p>
+      <a href="{{ url_for('graph_page') }}" class="website-link">Open full graph &rarr;</a>
+    </section>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+data/raw/*.json
+data/cleaned/*.json
+data/embeddings/*
+!data/raw/.gitkeep
+!data/cleaned/.gitkeep
+!data/embeddings/.gitkeep
+static/graph.html
+.DS_Store

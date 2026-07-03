@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - AI Knowledge Universe{% endblock %}
+
+{% block content %}
+  <section class="hero">
+    <h1>Explore the AI Ecosystem</h1>
+    <p>Search companies by meaning, not just keywords, and see how they connect.</p>
+
+    <form action="{{ url_for('search') }}" method="get" class="search-form">
+      <input
+        type="text"
+        name="q"
+        placeholder='Try "companies building robotics models"'
+        autocomplete="off"
+        required
+      >
+      <button type="submit">Search</button>
+    </form>
+  </section>
+
+  <section class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-number">{{ total_companies }}</span>
+      <span class="stat-label">Companies tracked</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">{{ category_counts|length }}</span>
+      <span class="stat-label">Categories</span>
+    </div>
+    <div class="stat-card">
+      <a href="{{ url_for('graph_page') }}" class="stat-link">View knowledge graph &rarr;</a>
+    </div>
+  </section>
+
+  <section class="two-column">
+    <div class="column">
+      <h2>Companies by Category</h2>
+      <ul class="category-list">
+        {% for category, count in category_counts %}
+          <li>
+            <span class="category-name">{{ category }}</span>
+            <span class="category-count">{{ count }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="column">
+      <h2>Recently Added</h2>
+      <ul class="company-list">
+        {% for company in recent_companies %}
+          <li>
+            <a href="{{ url_for('company_page', slug=company.slug) }}">{{ company.name }}</a>
+            <span class="company-category">{{ company.category }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+{% endblock %}
