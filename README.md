@@ -27,7 +27,7 @@
 
 AI Knowledge Universe is an interactive AI exploration platform that combines **semantic search**, **vector embeddings**, and **knowledge graphs** into one intuitive web application
 
-Instead of searching for exact company names, users can ask questions naturally:
+Instead of searching for exact company names, user can ask questions naturally:
 
 > *"Companies building robotics foundation models"*
 
