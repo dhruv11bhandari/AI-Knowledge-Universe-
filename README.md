@@ -2,7 +2,7 @@
 
 # AI Knowledge Universe
 
-### *Explore the AI Ecosystem through Semantic Search, Knowledge Graphs & Modern NLP*
+### *Explore the AI Ecosystem through Semantic Search,Knowledge Graphs & Modern NLP*
 
 <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=28&pause=1200&color=00C2FF&center=true&vCenter=true&width=900&lines=Semantic+Search+Powered+by+Sentence+Transformers;Knowledge+Graphs+with+NetworkX+%26+PyVis;Natural+Language+Company+Discovery;Built+with+Flask+%7C+FAISS+%7C+Python" />
 
