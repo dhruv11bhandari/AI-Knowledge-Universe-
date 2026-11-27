@@ -8,7 +8,6 @@
 
 <br>
 
-
 ![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)
 ![Flask](https://img.shields.io/badge/Flask-Web_App-black?style=for-the-badge&logo=flask)
 ![FAISS](https://img.shields.io/badge/FAISS-Vector_Search-red?style=for-the-badge)
